@@ -1,0 +1,46 @@
+{Question 1}
+
+See the "zipf - training data" and "zipf - zipf power law" images for the plots.
+The first pair of graphs look almost identical. The second pair of graphs,
+zoomed in, are also the same shape, though the training data plot is jagged
+while the Zipf power law is a smooth curve. The third pair of graphs, the logs
+of each function, are mostly similar. The Zipf law plot is a perfect line, while
+the training data has more erratic behavior on the left and right ends of the
+plot.
+
+{Question 2}
+
+[Cross entropies and perplexities for ngram models]
+Unigram cross entropy: 9.584310406232238
+Unigram perplexity: 767.6529443934787
+Bigram cross entropy: 10.101544807911408
+Bigram perplexity: 1098.6718310081576
+Trigram cross entropy: 11.487993123761175
+Trigram perplexity: 2872.3047751731465
+Interpolated (1:1:1) cross entropy: 7.507802311112471
+Interpolated (1:1:1) perplexity: 182.0009677097231
+Interpolated (2:2:1) cross entropy: 7.500570424686103
+Interpolated (2:2:1) perplexity: 181.09092305597247
+
+The final pair of numbers were obtained by setting the three lambda values to
+2/5, 2/5, and 1/5 respectively. This results in a slightly lower entropy value
+than the original 1/3, 1/3, and 1/3.
+
+As we move from unigrams to trigrams, the perplexity rises. This could be
+because when we use higher n-grams, more sequences of words have never been seen
+before, and thus get a very low probability.
+
+{Question 3}
+
+[Cross entropies and perplexities for sentence length models, compared to the
+test data]
+Unigram cross entropy: 5.708048929929994
+Unigram perplexity: 52.274988340820066
+Multinomial cross entropy: 5.318312421500242
+Multinomial perplexity: 39.89987776270727
+
+The unigram model always prefers shorter sentences, so it doesn't have the
+short "hump" at the beginning of the sentence length plot. The multinomial model
+copies the frequencies of the training data exactly, so the plot is exactly the
+same. The negative binomial plot gives a nice smooth curve that accurately
+follows the shape of the training data plot.
